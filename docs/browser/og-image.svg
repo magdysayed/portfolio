@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#070a12" />
+      <stop offset="1" stop-color="#0b1227" />
+    </linearGradient>
+    <radialGradient id="glow1" cx="25%" cy="20%" r="60%">
+      <stop offset="0" stop-color="#38bdf8" stop-opacity="0.35" />
+      <stop offset="1" stop-color="#38bdf8" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glow2" cx="70%" cy="55%" r="60%">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.24" />
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#glow1)" />
+  <rect width="1200" height="630" fill="url(#glow2)" />
+
+  <g fill="none" stroke="#38bdf8" opacity="0.25">
+    <circle cx="210" cy="160" r="170" />
+    <circle cx="990" cy="520" r="220" />
+  </g>
+
+  <g font-family="Inter,Segoe UI,Arial,sans-serif" fill="#ffffff">
+    <text x="110" y="270" font-size="54" font-weight="800">Magdy Sayed</text>
+    <text x="110" y="332" font-size="28" font-weight="600" fill="#b8c0d6">
+      Data Analyst " Frontend Developer " Programming Instructor
+    </text>
+    <text x="110" y="410" font-size="20" font-weight="600" fill="#9aa6c6">
+      Projects " Skills " Experience " Contact
+    </text>
+  </g>
+
+  <g>
+    <rect x="110" y="455" rx="18" ry="18" width="260" height="50" fill="#0a1a2a" stroke="#38bdf8" opacity="0.9" />
+    <text x="140" y="488" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="800" fill="#dff5ff">
+      magdysayed.github.io
+    </text>
+  </g>
+</svg>
+
