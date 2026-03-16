@@ -30,7 +30,7 @@ export const ABOUT_TEXT =
 export const QUICK_STATS = [
   { icon: '🏆', label: 'Years Experience', value: '3+', to: 3, suffix: '+' },
   { icon: '💼', label: 'Projects', value: '8+', to: 8, suffix: '+' },
-  { icon: '👨‍🏫', label: 'Students Taught', value: '50+', to: 50, suffix: '+' },
+  { icon: '👨‍🏫', label: 'Students Taught', value: '300+', to: 300, suffix: '+' },
   { icon: '🏅', label: 'Competition Awards', value: 'Multiple', to: null, suffix: '' },
 ] as const;
 
