@@ -1,0 +1,31 @@
+.fab {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 130;
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  border: 1px solid var(--stroke);
+  background: color-mix(in srgb, var(--bg) 80%, rgba(255, 255, 255, 0.04));
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 900;
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-sm);
+  transition: transform 200ms var(--ease-out), border-color 200ms var(--ease-out), background 200ms var(--ease-out);
+}
+
+.fab:hover {
+  transform: translateY(-2px);
+  border-color: rgba(56, 189, 248, 0.55);
+  background: rgba(56, 189, 248, 0.12);
+}
+
+@media (max-width: 520px) {
+  .fab {
+    right: 14px;
+    bottom: 14px;
+  }
+}
+

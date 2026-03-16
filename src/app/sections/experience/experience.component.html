@@ -1,0 +1,31 @@
+<section id="experience" class="section exp">
+  <div class="container">
+    <h2 class="section__title" data-aos="fade-up">Experience</h2>
+    <p class="section__subtitle" data-aos="fade-up" data-aos-delay="80">
+      Roles that shaped my ability to build, analyze, and communicate technical ideas.
+    </p>
+
+    <div class="timeline">
+      @for (item of items; track item.role) {
+        <div class="timeline__item" data-aos="fade-up" data-aos-delay="120">
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <div class="timeline__card card">
+            <div class="timeline__top">
+              <div>
+                <div class="timeline__role">{{ item.role }}</div>
+                <div class="timeline__company">{{ item.company }}</div>
+              </div>
+              <div class="timeline__duration tag">{{ item.duration }}</div>
+            </div>
+            <ul class="timeline__bullets">
+              @for (b of item.bullets; track b) {
+                <li>{{ b }}</li>
+              }
+            </ul>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+

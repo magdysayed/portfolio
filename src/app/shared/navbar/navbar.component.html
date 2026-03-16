@@ -1,0 +1,57 @@
+<header class="nav" [class.nav--scrolled]="scrolled()">
+  <div class="container nav__inner">
+    <button class="brand" type="button" (click)="scrollTo('home')" aria-label="Go to top">
+      <span class="brand__dot" aria-hidden="true"></span>
+      <span class="brand__name">{{ profile.name }}</span>
+    </button>
+
+    <nav class="nav__links" aria-label="Primary navigation">
+      @for (item of items; track item.id) {
+        <button class="nav__link" type="button" (click)="scrollTo(item.id)">
+          {{ item.label }}
+        </button>
+      }
+    </nav>
+
+    <div class="nav__actions">
+      <button class="icon-btn" type="button" (click)="theme.toggle()" [attr.aria-label]="'Switch theme (current ' + theme.theme() + ')'">
+        <span class="icon" aria-hidden="true">
+          @if (theme.theme() === 'dark') {
+            ☾
+          } @else {
+            ◐
+          }
+        </span>
+      </button>
+
+      <button
+        class="hamburger"
+        type="button"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="open()"
+        aria-controls="mobile-menu"
+        aria-label="Open menu"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile" [class.mobile--open]="open()" id="mobile-menu">
+    <div class="container mobile__panel card">
+      <div class="mobile__top">
+        <div class="mobile__title">Menu</div>
+        <button class="icon-btn" type="button" (click)="closeMenu()" aria-label="Close menu">✕</button>
+      </div>
+
+      <div class="mobile__links">
+        @for (item of items; track item.id) {
+          <button class="mobile__link" type="button" (click)="scrollTo(item.id)">
+            {{ item.label }}
+          </button>
+        }
+      </div>
+    </div>
+  </div>
+</header>
+

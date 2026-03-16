@@ -1,0 +1,18 @@
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 120;
+  background: transparent;
+}
+
+.progress__bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, rgba(56, 189, 248, 0.9), rgba(34, 211, 238, 0.65));
+  box-shadow: 0 0 24px rgba(56, 189, 248, 0.25);
+  border-radius: 999px;
+}
+

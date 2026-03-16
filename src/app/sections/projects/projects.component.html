@@ -1,0 +1,54 @@
+<section id="projects" class="section projects">
+  <div class="container">
+    <h2 class="section__title" data-aos="fade-up">Projects</h2>
+    <p class="section__subtitle" data-aos="fade-up" data-aos-delay="80">
+      A curated set of work across frontend, analytics, and mixed solutions.
+    </p>
+
+    <div class="projects__filters" data-aos="fade-up" data-aos-delay="120">
+      @for (f of filters; track f) {
+        <button
+          type="button"
+          class="filter"
+          [class.filter--active]="filter() === f"
+          (click)="setFilter(f)"
+          [attr.aria-pressed]="filter() === f"
+        >
+          {{ f }}
+        </button>
+      }
+    </div>
+
+    <div class="projects__grid">
+      @for (p of visible(); track p.name) {
+        <article class="project card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project__media">
+            <div class="project__gradient" aria-hidden="true"></div>
+            <div class="project__category tag">{{ p.category }}</div>
+          </div>
+
+          <div class="project__body">
+            <h3 class="project__name">{{ p.name }}</h3>
+            <p class="project__desc">{{ p.description }}</p>
+
+            <div class="project__tags">
+              @for (t of p.tech; track t) {
+                <span class="tag tag--soft">{{ t }}</span>
+              }
+            </div>
+
+            <div class="project__links">
+              @if (p.liveUrl) {
+                <a class="btn btn--primary btn--sm" [href]="p.liveUrl" target="_blank" rel="noopener">Live Demo</a>
+              }
+              @if (p.githubUrl) {
+                <a class="btn btn--ghost btn--sm" [href]="p.githubUrl" target="_blank" rel="noopener">GitHub</a>
+              }
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,39 @@
+<section id="about" class="section about" #aboutSection>
+  <div class="container">
+    <h2 class="section__title" data-aos="fade-up">About Me</h2>
+    <p class="section__subtitle" data-aos="fade-up" data-aos-delay="80">
+      A quick overview of who I am, what I do, and what I’m looking for next.
+    </p>
+
+    <div class="about__grid">
+      <div class="about__photo card" data-aos="fade-up" data-aos-delay="120">
+        <img
+          class="photo__img"
+          src="assets/images/profile.png"
+          alt="Magdy Sayed - Profile Photo"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+
+      <div class="about__content" data-aos="fade-up" data-aos-delay="160">
+        <div class="about__text card">
+          <p [innerHTML]="richText"></p>
+        </div>
+
+        <div class="about__stats">
+          @for (s of stats; track s.label; let i = $index) {
+            <div class="stat card">
+              <div class="stat__value">
+                <span class="stat__icon" aria-hidden="true">{{ s.icon }}</span>
+                <span class="stat__num">{{ displayValues()[i] }}</span>
+              </div>
+              <div class="stat__label">{{ s.label }}</div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

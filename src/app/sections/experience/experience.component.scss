@@ -1,0 +1,68 @@
+.timeline {
+  position: relative;
+  margin-top: 26px;
+  display: grid;
+  gap: 14px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(56, 189, 248, 0.55), rgba(56, 189, 248, 0.05));
+}
+
+.timeline__item {
+  position: relative;
+  padding-left: 34px;
+}
+
+.timeline__dot {
+  position: absolute;
+  left: 3px;
+  top: 18px;
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, var(--accent-2), var(--accent));
+  box-shadow: 0 0 0 6px rgba(56, 189, 248, 0.12);
+}
+
+.timeline__card {
+  padding: 16px;
+}
+
+.timeline__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.timeline__role {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.timeline__company {
+  margin-top: 6px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.timeline__bullets {
+  margin: 14px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.timeline__bullets li {
+  margin: 8px 0;
+}
+

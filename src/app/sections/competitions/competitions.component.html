@@ -1,0 +1,24 @@
+<section id="competitions" class="section comp">
+  <div class="container">
+    <h2 class="section__title" data-aos="fade-up">Competitions & Achievements</h2>
+    <p class="section__subtitle" data-aos="fade-up" data-aos-delay="80">
+      Coaching teams in international competitions sharpened my leadership, planning, and engineering mindset.
+    </p>
+
+    <div class="comp__grid">
+      @for (a of items; track a.title) {
+        <article class="comp__card card" data-aos="fade-up" data-aos-delay="120">
+          <div class="comp__top">
+            <div class="comp__badge" aria-hidden="true">🏆</div>
+            <div>
+              <h3 class="comp__title">{{ a.title }}</h3>
+              <div class="comp__role">{{ a.role }}</div>
+            </div>
+          </div>
+          <p class="comp__desc">{{ a.description }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+

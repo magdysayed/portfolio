@@ -1,0 +1,70 @@
+<section id="contact" class="section contact">
+  <div class="container">
+    <h2 class="section__title" data-aos="fade-up">Contact</h2>
+    <p class="section__subtitle" data-aos="fade-up" data-aos-delay="80">
+      Want to collaborate or hire me? Send a message — I’ll respond as soon as possible.
+    </p>
+
+    <div class="contact__grid">
+      <div class="contact__cards" data-aos="fade-up" data-aos-delay="120">
+        <a class="info card" [href]="'mailto:' + profile.email">
+          <div class="info__label">Email</div>
+          <div class="info__value">{{ profile.email }}</div>
+        </a>
+        <a class="info card" [href]="profile.linkedin" target="_blank" rel="noopener">
+          <div class="info__label">LinkedIn</div>
+          <div class="info__value">linkedin.com/in/magdy-elsayed-6b5555382</div>
+        </a>
+        <a class="info card" [href]="profile.github" target="_blank" rel="noopener">
+          <div class="info__label">GitHub</div>
+          <div class="info__value">github.com/magdysayed</div>
+        </a>
+      </div>
+
+      <form class="form card" [formGroup]="form" (ngSubmit)="submit()" data-aos="fade-up" data-aos-delay="160">
+        <div class="form__row">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" type="text" formControlName="name" placeholder="Your name" />
+            @if (form.controls.name.touched && form.controls.name.invalid) {
+              <div class="error">Please enter your name (min 2 characters).</div>
+            }
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" formControlName="email" placeholder="you@example.com" />
+            @if (form.controls.email.touched && form.controls.email.invalid) {
+              <div class="error">Please enter a valid email.</div>
+            }
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="subject">Subject</label>
+          <input id="subject" type="text" formControlName="subject" placeholder="What’s this about?" />
+          @if (form.controls.subject.touched && form.controls.subject.invalid) {
+            <div class="error">Please enter a subject (min 3 characters).</div>
+          }
+        </div>
+
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" rows="6" formControlName="message" placeholder="Write your message..."></textarea>
+          @if (form.controls.message.touched && form.controls.message.invalid) {
+            <div class="error">Please enter a message (min 10 characters).</div>
+          }
+        </div>
+
+        <div class="form__actions">
+          <button class="btn btn--primary" type="submit" [disabled]="!canSubmit()">
+            @if (sending()) { Sending… } @else { Send Message }
+          </button>
+          @if (sent()) {
+            <div class="sent">Opened your email client. If it didn’t open, email me directly.</div>
+          }
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+

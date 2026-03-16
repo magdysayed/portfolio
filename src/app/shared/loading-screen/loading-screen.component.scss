@@ -1,0 +1,60 @@
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+}
+
+.loader__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(900px 420px at 20% 20%, rgba(56, 189, 248, 0.22), transparent 60%),
+    radial-gradient(900px 420px at 70% 60%, rgba(99, 102, 241, 0.16), transparent 55%),
+    var(--bg);
+}
+
+.loader__card {
+  position: relative;
+  padding: 18px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: min(420px, calc(100% - 40px));
+}
+
+.spinner {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 3px solid rgba(255, 255, 255, 0.12);
+  border-top-color: rgba(56, 189, 248, 0.9);
+  box-shadow: 0 0 26px rgba(56, 189, 248, 0.25);
+  animation: spin 900ms linear infinite;
+}
+
+html[data-theme="light"] .spinner {
+  border: 3px solid rgba(3, 7, 18, 0.12);
+  border-top-color: rgba(56, 189, 248, 0.95);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loader__title {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  font-weight: 900;
+}
+
+.loader__sub {
+  margin-top: 4px;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 13px;
+}
+

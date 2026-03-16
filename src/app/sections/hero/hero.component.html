@@ -1,0 +1,56 @@
+<section id="home" class="hero">
+  <div class="hero__bg" aria-hidden="true"></div>
+
+  <div class="container hero__inner">
+    <div class="hero__content" data-aos="fade-up" data-aos-duration="900">
+      <div class="hero__kicker">Hello, I’m</div>
+      <h1 class="hero__title">
+        <span class="hero__name">{{ profile.name }}</span>
+      </h1>
+
+      <div class="hero__typing">
+        <span class="hero__typingLabel">I build and teach with data & code.</span>
+        <span class="hero__typed" #typedEl></span>
+      </div>
+
+      <p class="hero__summary">
+        I craft modern web experiences, turn data into decisions, and mentor the next generation of makers — with a
+        focus on clarity, performance, and delightful UX.
+      </p>
+
+      <div class="hero__cta">
+        <button class="btn btn--primary" type="button" (click)="scrollToProjects()">View My Work</button>
+        <a class="btn btn--ghost" href="assets/files/Magdy_Sayed_Resume.pdf" download="Magdy_Sayed_Resume.pdf">
+          Download Resume
+        </a>
+      </div>
+
+      <div class="hero__social" aria-label="Social links">
+        <a class="social" [href]="profile.github" target="_blank" rel="noopener">GitHub</a>
+        <a class="social" [href]="profile.linkedin" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="social" [href]="'mailto:' + profile.email">Email</a>
+      </div>
+    </div>
+
+    <div class="hero__side card" data-aos="fade-left" data-aos-duration="900" data-aos-delay="150">
+      <div class="hero__sideTop">
+        <div class="badge">Available for opportunities</div>
+      </div>
+      <div class="hero__sideBody">
+        <div class="mini">
+          <div class="mini__label">Focus</div>
+          <div class="mini__value">Frontend • Data • Education</div>
+        </div>
+        <div class="mini">
+          <div class="mini__label">Location</div>
+          <div class="mini__value">Egypt (Open to remote)</div>
+        </div>
+        <div class="mini">
+          <div class="mini__label">Email</div>
+          <div class="mini__value">{{ profile.email }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
