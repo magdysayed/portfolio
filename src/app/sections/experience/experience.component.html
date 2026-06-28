@@ -5,14 +5,20 @@
       Roles that shaped my ability to build, analyze, and communicate technical ideas.
     </p>
 
+    <!-- EDITED: Updated experience items array in TS to include eYouth (DECI), Data Engineer, and reordered roles -->
     <div class="timeline">
-      @for (item of items; track item.role) {
+      @for (item of items; track item.id) {
         <div class="timeline__item" data-aos="fade-up" data-aos-delay="120">
           <div class="timeline__dot" aria-hidden="true"></div>
           <div class="timeline__card card">
             <div class="timeline__top">
               <div>
-                <div class="timeline__role">{{ item.role }}</div>
+                <div class="timeline__role">
+                  {{ item.role }}
+                  @if (item.tag) {
+                    <span class="timeline__tag tag">{{ item.tag }}</span>
+                  }
+                </div>
                 <div class="timeline__company">{{ item.company }}</div>
               </div>
               <div class="timeline__duration tag">{{ item.duration }}</div>

@@ -19,7 +19,7 @@ export class HeroComponent implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     this.typed = new Typed(this.typedEl.nativeElement, {
-      strings: ['Data Analyst', 'Frontend Developer', 'Programming Instructor'],
+      strings: ['AI Automation Engineer', 'Data Analyst', 'STEM Lead'],
       typeSpeed: 55,
       backSpeed: 28,
       showCursor: true,

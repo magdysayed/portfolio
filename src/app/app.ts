@@ -7,6 +7,7 @@ import { CompetitionsComponent } from './sections/competitions/competitions.comp
 import { ContactComponent } from './sections/contact/contact.component';
 import { EducationComponent } from './sections/education/education.component';
 import { ExperienceComponent } from './sections/experience/experience.component';
+import { GalleryComponent } from './sections/gallery/gallery.component'; /* NEW */
 import { HeroComponent } from './sections/hero/hero.component';
 import { ProjectsComponent } from './sections/projects/projects.component';
 import { SkillsComponent } from './sections/skills/skills.component';
@@ -26,6 +27,7 @@ import { ScrollProgressComponent } from './shared/scroll-progress/scroll-progres
     SkillsComponent,
     ProjectsComponent,
     ExperienceComponent,
+    GalleryComponent, /* NEW */
     CompetitionsComponent,
     EducationComponent,
     ContactComponent,

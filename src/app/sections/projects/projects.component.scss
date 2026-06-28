@@ -41,26 +41,62 @@
 }
 
 .project:hover {
-  transform: translateY(-4px);
+  transform: scale(1.03);
   border-color: rgba(56, 189, 248, 0.4);
   box-shadow: var(--shadow-md);
 }
 
-.project__media {
-  position: relative;
-  aspect-ratio: 16 / 10;
-  overflow: hidden;
+.project__cover {
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  transition: transform 500ms var(--ease-out);
+}
+
+.project:hover .project__cover {
+  transform: scale(1.05);
+}
+
+.project__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.45) 100%);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.project__status {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  z-index: 2;
 }
 
 .project__gradient {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(600px 260px at 20% 10%, rgba(56, 189, 248, 0.32), transparent 55%),
-    radial-gradient(600px 260px at 80% 90%, rgba(34, 211, 238, 0.24), transparent 55%),
-    linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.88));
-  transform: scale(1.02);
+  width: 100%;
+  height: 12rem;
+  z-index: 0;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.88));
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   transition: transform 500ms var(--ease-out), filter 300ms var(--ease-out);
+}
+
+.project__gradient--ai {
+  background:
+    radial-gradient(600px 260px at 20% 10%, rgba(168, 85, 247, 0.35), transparent 55%),
+    radial-gradient(600px 260px at 80% 90%, rgba(56, 189, 248, 0.28), transparent 55%),
+    linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(30, 27, 75, 0.9));
+}
+
+.project__gradient--data {
+  background:
+    radial-gradient(600px 260px at 20% 10%, rgba(34, 197, 94, 0.32), transparent 55%),
+    radial-gradient(600px 260px at 80% 90%, rgba(56, 189, 248, 0.24), transparent 55%),
+    linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(15, 40, 30, 0.88));
 }
 
 .project:hover .project__gradient {
@@ -72,6 +108,25 @@
   position: absolute;
   left: 12px;
   top: 12px;
+  z-index: 2;
+}
+
+.tag--ai {
+  border-color: rgba(168, 85, 247, 0.55);
+  background: rgba(168, 85, 247, 0.15);
+  color: color-mix(in srgb, #e9d5ff 90%, white);
+}
+
+.tag--data {
+  border-color: rgba(34, 197, 94, 0.55);
+  background: rgba(34, 197, 94, 0.15);
+  color: color-mix(in srgb, #bbf7d0 90%, white);
+}
+
+.project__media {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
 
 .project__body {

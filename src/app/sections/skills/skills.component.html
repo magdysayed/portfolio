@@ -1,8 +1,9 @@
 <section id="skills" class="section skills">
   <div class="container">
     <h2 class="section__title" data-aos="fade-up">Skills</h2>
+    <!-- EDITED -->
     <p class="section__subtitle" data-aos="fade-up" data-aos-delay="80">
-      A balanced toolkit across frontend development, data analysis, robotics education, and soft skills.
+      A balanced toolkit across AI automation, data science & analytics, and STEM leadership.
     </p>
 
     <div class="skills__grid">
@@ -10,13 +11,11 @@
         <div class="skills__group card" data-aos="fade-up" data-aos-delay="120">
           <div class="skills__head">
             <h3 class="skills__title">
-              @if (group.title === 'Frontend Development') {
-                <span aria-hidden="true">💻</span>
-              } @else if (group.title === 'Data Analysis') {
+              @if (group.title === 'AI & Automation') {
+                <span aria-hidden="true">⚡</span>
+              } @else if (group.title === 'Data Science & Analytics') {
                 <span aria-hidden="true">📊</span>
-              } @else if (group.title === 'Programming & Robotics') {
-                <span aria-hidden="true">🤖</span>
-              } @else if (group.title === 'Soft Skills') {
+              } @else if (group.title === 'STEM & Leadership') {
                 <span aria-hidden="true">🧠</span>
               }
               <span>{{ group.title }}</span>

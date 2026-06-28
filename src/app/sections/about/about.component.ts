@@ -66,10 +66,18 @@ export class AboutComponent implements AfterViewInit, OnDestroy {
 
   private buildHighlightedHtml(text: string) {
     const keywords = [
-      'Frontend Development',
-      'Data Analysis',
-      'Programming Education',
-      'Arduino Development',
+      'AI Workflows',
+      'n8n',
+      'RAG',
+      'LLMs',
+      'Data Analytics',
+      'SQL',
+      'Power BI',
+      'Python',
+      'STEM Leadership',
+      'Techno Kids',
+      'E-Youth',
+      'DECI Initiative',
       'Kafrelsheikh University',
     ];
 

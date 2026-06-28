@@ -1,0 +1,27 @@
+<!-- NEW -->
+<section id="gallery" class="section gallery">
+  <div class="container">
+    <h2 class="section__title" data-aos="fade-up">Teaching Gallery</h2>
+    <p class="section__subtitle" data-aos="fade-up" data-aos-delay="80">
+      Moments from my journey teaching the next generation of makers.
+    </p>
+
+    <!-- NEW — Auto-sliding square carousel -->
+    <div class="gallery__carousel-wrapper" data-aos="fade-up" data-aos-delay="120">
+      <div class="gallery__frame card">
+        @for (src of images; track $index) {
+          <img
+            class="gallery__slide"
+            [src]="src"
+            alt="Teaching moment {{ $index + 1 }}"
+            [class.gallery__slide--active]="currentIndex() === $index && !isImageFailed($index)"
+            [class.gallery__slide--hidden]="currentIndex() !== $index || isImageFailed($index)"
+            loading="lazy"
+            (error)="onImageError($index)"
+          />
+        }
+      </div>
+    </div>
+  </div>
+</section>
+

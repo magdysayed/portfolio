@@ -2,7 +2,7 @@
   <div class="container">
     <h2 class="section__title" data-aos="fade-up">Projects</h2>
     <p class="section__subtitle" data-aos="fade-up" data-aos-delay="80">
-      A curated set of work across frontend, analytics, and mixed solutions.
+      Featured work across AI automation workflows and advanced data analytics.
     </p>
 
     <div class="projects__filters" data-aos="fade-up" data-aos-delay="120">
@@ -20,30 +20,67 @@
     </div>
 
     <div class="projects__grid">
-      @for (p of visible(); track p.name) {
-        <article class="project card" data-aos="fade-up" data-aos-delay="100">
+      @for (project of visible(); track project.id) {
+        <article
+          class="project card"
+          [style.opacity]="project.status === 'Coming Soon' ? '0.7' : null"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
           <div class="project__media">
-            <div class="project__gradient" aria-hidden="true"></div>
-            <div class="project__category tag">{{ p.category }}</div>
+            @if (project.imageUrl) {
+              <img
+                [src]="project.imageUrl"
+                [alt]="project.title"
+                class="project__cover"
+                loading="lazy"
+                decoding="async"
+              />
+            } @else {
+              <div
+                class="project__gradient"
+                [class.project__gradient--ai]="project.category === 'AI Automation'"
+                [class.project__gradient--data]="project.category === 'Data Analysis'"
+                aria-hidden="true"
+              ></div>
+            }
+            <div class="project__overlay" aria-hidden="true"></div>
+            @if (project.status === 'Coming Soon') {
+              <div class="tag project__status">{{ project.status }}</div>
+            }
+            <div
+              class="project__category tag"
+              [class.tag--ai]="project.category === 'AI Automation'"
+              [class.tag--data]="project.category === 'Data Analysis'"
+            >
+              {{ project.category }}
+            </div>
           </div>
 
           <div class="project__body">
-            <h3 class="project__name">{{ p.name }}</h3>
-            <p class="project__desc">{{ p.description }}</p>
+            <h3 class="project__name">{{ project.title }}</h3>
+            <p class="project__desc">{{ project.description }}</p>
 
             <div class="project__tags">
-              @for (t of p.tech; track t) {
+              @for (t of project.techStack; track t) {
                 <span class="tag tag--soft">{{ t }}</span>
               }
             </div>
 
             <div class="project__links">
-              @if (p.liveUrl) {
-                <a class="btn btn--primary btn--sm" [href]="p.liveUrl" target="_blank" rel="noopener">Live Demo</a>
+              @if (project.githubUrl) {
+                <a class="btn btn--primary btn--sm" [href]="project.githubUrl" target="_blank" rel="noopener noreferrer">
+                  View on GitHub
+                </a>
               }
-              @if (p.githubUrl) {
-                <a class="btn btn--ghost btn--sm" [href]="p.githubUrl" target="_blank" rel="noopener">GitHub</a>
-              }
+              <button
+                type="button"
+                class="btn btn--ghost btn--sm"
+                (click)="viewDetails(project)"
+                [disabled]="project.status === 'Coming Soon'"
+              >
+                View Details
+              </button>
             </div>
           </div>
         </article>
@@ -51,4 +88,3 @@
     </div>
   </div>
 </section>
-
